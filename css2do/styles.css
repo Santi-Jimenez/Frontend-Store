@@ -1,0 +1,261 @@
+:root{
+    --Principal: rgb(200, 0, 200);
+    --PrincipalOscuro: purple;
+    --Blanco: white;
+    --Negro: black;
+    --Secundario: hsla(39, 100%, 59%, 0.929);
+    --SecundarioOscuro: rgba(255, 98, 0, 0.901);
+    
+    --FuentePrincipal: 'Staatliches', cursive;
+
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  /* Globales */
+body {
+    background-color: var(--Principal);
+    font-size: 16px;
+    line-height: 1.5;
+    margin-right: 0;
+}
+p{
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--Blanco);
+}
+a{
+    text-decoration: none;
+}
+img{
+    width: 100%;
+}
+h1,h2,h3{
+    text-align: center;
+    color: var(--Secundario);
+    font-family: var(--FuentePrincipal);
+}
+h1{
+    font-size: 4rem;
+}
+h2{
+    font-size: 3.2rem;
+}
+h3{
+    font-size: 2rem;
+}
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+/*Logotipo*/
+
+.header{
+    display: flex;
+    justify-content: center;
+}
+.header__logo{
+    margin: 3rem;
+}
+/*Navegacion*/
+
+.nav{
+   background-color: var(--PrincipalOscuro);
+   text-align: center;
+   padding: 1rem 0;
+}
+.nav__navegacion{
+   font-family:var(--FuentePrincipal) ;
+   color: var(--Blanco);
+   margin-left: 1rem;
+   font-size: 2.5rem;
+}
+.nav__navegacion--activo,
+.nav__navegacion:hover{
+    color: var(--Secundario);
+}
+/*Footer*/
+.footer{
+    background-color: var(--PrincipalOscuro);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+.footer__Elemento{
+    text-align: center;
+    color: var(--Blanco);
+    font-size: 2.2rem;
+    font-family: var(--FuentePrincipal);
+}
+/*Producto*/
+/*ESTE GRID SE UTILIZA EN CUALQUIER PAGINA WEB DE VENTAS DE ARTICULOS, ETC */
+.grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    row-gap: 1.5rem;
+    column-gap: 1.5rem;
+}
+@media (min-width: 768px) {
+    .grid{
+        grid-template-columns: repeat(3, 1fr)
+    }
+}
+.producto{
+    background-color: var(--PrincipalOscuro);
+    padding: 1rem;
+}
+.producto__informacion{
+
+}
+.producto__precio{
+    color: var(--Secundario);
+}    
+.producto__nombre,
+.producto__precio {
+     text-align: center;
+    font-family: var(--FuentePrincipal);
+     font-size: 3rem; 
+     margin: 1rem 0;
+    line-height: 1.2;
+ }
+
+/* PODIA SIMPLIFICAR TODO HACIENDO DOS CLASES EN "UNA"
+.producto__nombre{ 
+    text-align: center;
+    font-family: var(--FuentePrincipal);
+    font-size: 3rem; 
+    margin: 1rem 0;
+    line-height: 1.2;
+}
+.producto__precio{
+    text-align: center;
+    font-family: var(--FuentePrincipal);
+    font-size: 3rem; 
+    color: var(--Secundario);
+    margin: 1rem 0;
+    line-height: 1.2;
+}
+*/
+/*graficos*/
+.grafico{
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 30rem;
+}
+
+.grafico--camisas{
+    grid-row: 2/3;
+    grid-column: 1/3;
+    background-image: url(../img/grafico1.jpg);
+}
+
+.grafico--node{
+    background-image: url(../img/grafico2.jpg);
+    grid-column: 1/3;
+    grid-row: 8/9;
+}
+@media (min-width: 768px) {
+    .grafico--node{
+        grid-row: 5/6;
+        grid-column: 2/4;
+    }
+}
+
+/*Nosotros*/
+.nosotros{
+    display: grid;
+    grid-template-rows: (2, auto)   /*Tome el tamaño automaticamente para que no quede fijo nie espacios*/
+}
+
+@media (min-width: 768px) {
+    .nosotros{
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 2rem;
+    }
+}
+.nosotros__imagen{
+    grid-row: 1 / 2;
+}
+@media (min-width: 768px) {
+    .nosotros__imagen{
+        grid-column: 2 / 3;
+    }
+}
+/* bloques */
+.bloques{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+@media (min-width: 768px) {
+    .bloques{
+        grid-template-columns: repeat(4,1fr);
+        column-gap: 2rem;
+    }
+}
+.bloque{
+    text-align: center;
+    width: 100%;
+}
+.bloque__titulo{
+    margin: 0;
+}
+
+/*producto*/
+
+@media (min-width:768px ) {
+    .Remeras{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 2rem;
+    }
+}
+.Remeras__imagen{
+
+}
+.Remeras__contenido{
+
+}
+.formulario{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
+.formulario__campo{
+    border: 1rem solid var(--PrincipalOscuro);
+    background-color: transparent;
+    color: var(--Blanco);
+    font-size: 2rem;
+    padding: 1.2rem;
+
+}
+.formulario__submit{
+    grid-column: 1/3;
+    color: var(--Negro);
+    background-color: var(--Secundario);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--FuentePrincipal);
+    padding: 2rem;
+    transition: background-color .3s ease;
+    transition: font-size .3s ease-in;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+@media (min-width: 768px) {
+    .formulario__submit{
+       margin-left: 0;
+       margin-right: 0;
+    }
+}    
+.formulario__submit:hover{
+    font-size: 2.5rem;
+    cursor: pointer;
+    background-color: var(--SecundarioOscuro);
+}
